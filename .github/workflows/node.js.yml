@@ -1,0 +1,41 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Execute
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: |
+          echo GOOGLE_SERVICE_ACCOUNT_EMAIL=${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }} >> .env
+          echo GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY=${{ secrets.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY }} >> .env
+          echo GOOGLE_DRIVE_API_KEY=${{ secrets.GOOGLE_DRIVE_API_KEY }} >> .env
+          echo NOTION_DATABASE_ID=${{ secrets.NOTION_DATABASE_ID }} >> .env
+          echo NOTION_API_KEY=${{ secrets.NOTION_API_KEY }} >> .env
+          echo NAVER_OCR_API_URL=${{ secrets.NAVER_OCR_API_URL }} >> .env
+          echo NAVER_OCR_API_KEY=${{ secrets.NAVER_OCR_API_KEY }} >> .env
+      - run: npm install
+      - run: node index.js ${{ github.event.issue.title }}
+      - name: Close Issue
+        uses: peter-evans/close-issue@v1
+        with:
+          comment: Auto-closing issue after workflows

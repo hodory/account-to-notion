@@ -1,0 +1,130 @@
+{
+  "template": {
+    "12430": [
+      {
+        "property_id": "title",
+        "property_name": "결제내역",
+        "property_type": "title",
+        "mapping_fields": ["title"]
+      },
+      {
+        "property_id": "WHbL",
+        "property_name": "지출",
+        "property_type": "number",
+        "mapping_fields": ["price"]
+      },
+      {
+        "property_id": "e%7DBE",
+        "property_name": "카테고리",
+        "property_type": "select",
+        "mapping_fields": ["category"]
+      },
+      {
+        "property_id": "%7DlQW",
+        "property_name": "메모",
+        "property_type": "rich_text",
+        "mapping_fields": ["note"]
+      },
+      {
+        "property_id": "GLci",
+        "property_name": "계좌",
+        "property_type": "relation",
+        "mapping_fields": ["payment"]
+      },
+      {
+        "property_id": "Bw%7B%60",
+        "property_name": "결제일",
+        "property_type": "date",
+        "mapping_fields": ["payment_date"]
+      },
+      {
+        "property_id": "lIPe",
+        "property_name": "구매처",
+        "property_type": "select",
+        "mapping_fields": ["vendor"]
+      }
+    ],
+    "12431": [
+      {
+        "property_id": "title",
+        "property_name": "결제내역",
+        "property_type": "title",
+        "mapping_fields": ["title"]
+      },
+      {
+        "property_id": "WHbL",
+        "property_name": "지출",
+        "property_type": "number",
+        "mapping_fields": ["price"]
+      },
+      {
+        "property_id": "e%7DBE",
+        "property_name": "카테고리",
+        "property_type": "select",
+        "mapping_fields": ["category"]
+      },
+      {
+        "property_id": "%7DlQW",
+        "property_name": "메모",
+        "property_type": "rich_text",
+        "mapping_fields": ["note"]
+      },
+      {
+        "property_id": "GLci",
+        "property_name": "계좌",
+        "property_type": "relation",
+        "mapping_fields": ["payment"]
+      },
+      {
+        "property_id": "Bw%7B%60",
+        "property_name": "결제일",
+        "property_type": "date",
+        "mapping_fields": ["payment_date"]
+      }
+    ],
+    "13231": [
+      {
+        "property_id": "title",
+        "property_name": "결제내역",
+        "property_type": "title",
+        "mapping_fields": ["title"]
+      },
+      {
+        "property_id": "WHbL",
+        "property_name": "지출",
+        "property_type": "number",
+        "mapping_fields": ["price"]
+      },
+      {
+        "property_id": "e%7DBE",
+        "property_name": "카테고리",
+        "property_type": "select",
+        "mapping_fields": ["category"]
+      },
+      {
+        "property_id": "%7DlQW",
+        "property_name": "메모",
+        "property_type": "rich_text",
+        "mapping_fields": ["note", "payment_detail"]
+      },
+      {
+        "property_id": "GLci",
+        "property_name": "계좌",
+        "property_type": "relation",
+        "mapping_fields": ["payment"]
+      },
+      {
+        "property_id": "Bw%7B%60",
+        "property_name": "결제일",
+        "property_type": "date",
+        "mapping_fields": ["payment_date"]
+      },
+      {
+        "property_id": "lIPe",
+        "property_name": "구매처",
+        "property_type": "select",
+        "mapping_fields": ["vendor"]
+      }
+    ]
+  }
+}
